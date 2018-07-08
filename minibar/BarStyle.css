@@ -1,0 +1,129 @@
+*{
+    font-family: 'Open Sans';
+    box-sizing: border-box;
+}
+.miniBar{ 
+    top:110%;
+    position: absolute;
+    width: 98%;
+    height: 0%;
+    background: url(back.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transition: 1.5s;
+    z-index: 5;
+}
+
+
+.Container{
+    min-height: 70%; 
+    min-width: 36%;
+    opacity: 2;  
+    top: 20%;
+    left: 35%;
+    position: absolute;  
+}
+
+
+.Container> .Content {
+    max-height: 40%;
+    min-height: 120px;
+    overflow-y: scroll;
+    font-size: 50px;
+    
+}
+.Container> .ChatContent {
+    max-height: 40%;
+    min-height: 120px;
+    overflow-y: scroll;
+    font-size: 100px;
+    
+}
+
+#inventory {
+    left:69%;
+    min-width: 29.5%;
+}
+.Container> .Content p {
+    text-align: center;
+    color: red;
+}
+.Container>  #Gold{
+    position: absolute;
+    left: 35%;
+    top: 81%;
+}
+
+.health{
+    width: 13.4%;
+    height: 4%;
+    position: absolute;
+    top:51.5%;
+    left: 12%;
+}
+.health > .Profile canvas{
+    top:-500%;
+    position: absolute;
+    left: -70%;
+    max-height: 1000%;
+    max-width: 80%;
+}
+
+progress::-webkit-progress-bar {
+    background: #EEE;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
+    border-radius: 3px;
+}
+
+progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+   appearance: none;
+
+  width: 100%;
+  height: 18px;
+}
+progress[value]::-webkit-progress-value::before {
+  content: '80%';
+  position: absolute;
+  right: 0;
+  top: -125%;
+}
+progress[value]::-webkit-progress-value::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  border-radius: 100%;
+  right: 7px;
+  top: 7px;
+  background-color: white;
+}
+progress[value]{
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+progress[value]::-webkit-progress-value {
+  background-image:
+	   -webkit-linear-gradient(-45deg, 
+	                           transparent 33%, rgba(0, 0, 0, .1) 33%, 
+	                           rgba(0,0, 0, .1) 66%, transparent 66%),
+	   -webkit-linear-gradient(top, 
+	                           rgba(255, 255, 255, .25), 
+	                           rgba(0, 0, 0, .25)),
+	   -webkit-linear-gradient(left, #09c, #f44);
+
+    border-radius: 2px; 
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+    -webkit-animation: animate-stripes 5s linear infinite;
+        animation: animate-stripes 5s linear infinite;
+
+}
+@-webkit-keyframes animate-stripes {
+   100% { background-position: -100px 0px; }
+}
+
+@keyframes animate-stripes {
+   100% { background-position: -100px 0px; }
+}
