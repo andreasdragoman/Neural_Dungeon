@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>   
+  
+       <!-- <link rel="stylesheet" type="text/css" href="CSS/style.css" /> -->
+        <meta charset="utf-8" />
+        <title>First Game</title>
+        <script src = "js/phaser/phaser.js"></script>
+        <script src = "js/Boot.js"></script>
+        <script src = "js/Preloader.js"></script>
+        <script src = "js/MainMenu.js"></script>
+        <script src = "js/Level1.js"></script>
+        <script src = "js/Level2.js"></script>
+        <script src = "js/Level3.js"></script>
+        <link rel="shortcut icon" href="favicon.ico">    
+        
+        
+        <!--   .......................Main Menu ......................  -->
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="header/styles.css">
+        <script src = "header/script.js"></script>
+        <!--<script src="jquery-3.2.0.min.js"></script> -->
+
+
+    </head>  
+
+<body>
+    <script> window.onload=openNav</script>
+    <!--<?php include 'oci_functions.php'; ?> -->
+    <div id="myNav" class="overlay">
+  
+  <div class="overlay-content">
+      
+      
+      <a herf="#" id="buttonRegister" class="butonRegister"> Register</a>
+      <section id="register">
+        <form  action="good.php" method="post">
+            Name: <input type="text" name="nameR" > <br>
+            Password: <input type="password" name="passwordR" > <br>
+            E-mail <input type="email" name="emailR" > <br>
+            <input type="submit" name="SubmitR" value="Register">
+          </form>
+      </section>
+      
+      <a herf="#" id="butonLogIn" class="butonLogIn"> Sing In</a>
+      <section id="login">
+            <form action="good.php" method="post">
+            Name: <input type="text" name="nameL" placeholder="Your registered name"> <br>
+            Password: <input type="password" name="passwordL" placeholder="Your registered passwrod" > <br>
+            <input type="submit" name="SubmitL" value="Login">
+        </form>
+        
+      </section>
+      
+      <a herf="#" id="butonPlay" class="butonPlay"> Play</a>
+      <section id="login_cookie">
+            
+            <form action="good.php" method="post">
+            Name: <input type="text" name="nameLC" placeholder="Your desire name"> <br>
+            <input type="submit" name="SubmitLC" value="Enter">
+        </form>
+        
+</section>
+      
+<a herf="#" id="butonRank" class="butonRank"> Rank</a>
+      <!--aici vine pus tabelul-->
+      <div id="TableOverlay" class="overlay">
+          <div id="TableContent" class="overlay-content">
+               <form action="good.php" method="post">
+                    Map Level
+                   <input type="number" id="MapLevel" name="MapLevel"
+   min="0" max="100" step="1" value="0" onchange="Filter()">
+                   Level
+                   <input type="number" id="PlayerLevel" name="PlayerLevel"
+   min="0" max="100" step="1" value="0" onchange="Filter()">
+                    <input type="submit" name="Submit" value="Order" > 
+              </form>
+              <br>
+              <div id="RealTable">
+             <script>
+                 Filter();
+              </script>
+              </div>
+ 
+          
+          </div>
+      </div>
+      
+      <a herf="#" id="butonExp" class="butonExp"> Calc. Exp</a>
+      <!--aici vine pus tabelul-->
+      <div>
+      <form  >
+          Player Level <input type="number" id="PlayerLv" name="MapLevel"
+   min="0" max="100" step="1" value="1" onchange="Compute()">
+                   Map Level
+                   <input type="number" id="MapLv" name="PlayerLevel"
+   min="0" max="100" step="1" value="1" onchange="Compute()">
+         Monster Level
+                   <input type="number" id="MonsterLv" name="PlayerLevel"
+   min="0" max="100" step="1" value="1" onchange="Compute()">
+          Penality Level
+                   <input type="number" id="Penality" name="PlayerLevel"
+   min="0.1" max="1" step="0.05" value="0" onchange="Compute()">
+            <input type="submit" name="Submit" value="Compute" onclick="Compute()">
+          </form>
+          <div id="ShowCompute">
+              <script>Compute() </script>
+          </div>
+      </div>
+     <div id="Welcome">
+            
+            <?php
+                $cookie_name='cookie_login';
+                if(isset($_COOKIE[$cookie_name]))
+                {  
+                    $id = $_COOKIE[$cookie_name];
+                    echo '<script>
+                document.getElementById("Welcome").style.opacity="1";
+                document.getElementById("overlay-content").style.opacity="0";
+                </script>';
+                    setcookie($cookie_name,$id,1);
+                    setcookie($cookie_name,$id,time()+600);
+                    $name=GetUsername($id);
+                    echo 'Welcome  '.$name;
+                }   
+            ?>
+        </div>
+     
+      
+  </div>
+</div>
+    
+    
+      
+
+
+</body>
+
+
+</html>
